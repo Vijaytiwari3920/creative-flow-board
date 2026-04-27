@@ -138,7 +138,7 @@ export default function Auth() {
       </aside>
 
       {/* Right: Auth form */}
-      <div className="flex-1 flex items-center justify-center px-4 py-10">
+      <div className="flex-1 flex items-center justify-center px-4 py-10 relative z-10">
         <div className="w-full max-w-md animate-fade-in">
           <div className="flex items-center gap-3 justify-center mb-8 md:hidden">
             <img src={kanbanAiLogo} alt="Kanban + AI logo" className="h-14 w-auto" />
