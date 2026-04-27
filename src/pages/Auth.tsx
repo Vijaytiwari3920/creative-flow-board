@@ -8,7 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
-import { CheckSquare, Loader2 } from "lucide-react";
+import { Loader2, Sparkles, LayoutGrid, MessageSquare, Zap } from "lucide-react";
+import kanbanAiLogo from "@/assets/kanban-ai-logo.png";
 
 export default function Auth() {
   const { user, loading } = useAuth();
