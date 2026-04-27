@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
 import { Loader2, Sparkles, LayoutGrid, MessageSquare, Zap } from "lucide-react";
 import kanbanAiLogo from "@/assets/kanban-ai-logo.png";
+import authHero from "@/assets/auth-hero.png";
 
 export default function Auth() {
   const { user, loading } = useAuth();
