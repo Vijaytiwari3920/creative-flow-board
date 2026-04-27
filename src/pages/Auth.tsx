@@ -207,6 +207,21 @@ export default function Auth() {
             </button>
           </p>
         </Card>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Feature({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
+  return (
+    <div className="flex items-start gap-3 p-3 rounded-xl bg-card/60 backdrop-blur border border-border/60 shadow-sm hover:shadow-card-hover transition-shadow">
+      <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+        {icon}
+      </div>
+      <div className="min-w-0">
+        <p className="text-sm font-semibold leading-tight">{title}</p>
+        <p className="text-xs text-muted-foreground mt-0.5">{desc}</p>
       </div>
     </div>
   );
