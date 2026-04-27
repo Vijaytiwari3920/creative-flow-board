@@ -144,7 +144,7 @@ export default function Auth() {
             <img src={kanbanAiLogo} alt="Kanban + AI logo" className="h-14 w-auto" />
           </div>
 
-        <Card className="p-8 shadow-card border-border/60">
+        <Card className="p-8 shadow-elevated border-border/60 bg-card/80 backdrop-blur-xl">
           <div className="mb-6">
             <h1 className="text-2xl font-semibold tracking-tight">
               {mode === "signin" ? "Welcome back" : "Create your board"}
