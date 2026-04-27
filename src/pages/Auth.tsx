@@ -8,7 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
-import { CheckSquare, Loader2 } from "lucide-react";
+import { Loader2, Sparkles, LayoutGrid, MessageSquare, Zap } from "lucide-react";
+import kanbanAiLogo from "@/assets/kanban-ai-logo.png";
 
 export default function Auth() {
   const { user, loading } = useAuth();
@@ -72,14 +73,47 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-surface px-4">
-      <div className="w-full max-w-md animate-fade-in">
-        <div className="flex items-center gap-3 justify-center mb-8">
-          <div className="h-11 w-11 rounded-xl bg-primary flex items-center justify-center shadow-card">
-            <CheckSquare className="h-6 w-6 text-primary-foreground" strokeWidth={2.5} />
-          </div>
-          <span className="text-2xl font-bold tracking-tight">Tazkee</span>
+    <div className="min-h-screen flex bg-surface">
+      {/* Left: Intro / branding */}
+      <aside className="hidden lg:flex flex-col justify-between w-1/2 p-12 bg-gradient-to-br from-primary-soft via-background to-accent relative overflow-hidden">
+        <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[hsl(var(--col-review))]/10 blur-3xl" />
+
+        <div className="relative z-10 flex items-center gap-3">
+          <span className="text-xl font-bold tracking-tight">Tazkee</span>
+          <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary font-medium">by JVS</span>
         </div>
+
+        <div className="relative z-10 flex flex-col items-center text-center">
+          <img
+            src={kanbanAiLogo}
+            alt="Kanban + AI by JVS Company logo"
+            className="w-72 h-auto drop-shadow-xl mb-8 animate-scale-in"
+          />
+          <h2 className="text-3xl xl:text-4xl font-bold tracking-tight leading-tight max-w-md">
+            Your board, supercharged with{" "}
+            <span className="bg-gradient-to-r from-primary to-[hsl(var(--col-review))] bg-clip-text text-transparent">
+              AI
+            </span>
+          </h2>
+          <p className="text-muted-foreground mt-3 max-w-sm">
+            Plan, track and ship work beautifully — and let your built-in assistant do the heavy lifting.
+          </p>
+        </div>
+
+        <div className="relative z-10 grid grid-cols-1 gap-3">
+          <Feature icon={<LayoutGrid className="h-4 w-4" />} title="Drag-and-drop Kanban" desc="To Do · In Progress · Review · Done" />
+          <Feature icon={<MessageSquare className="h-4 w-4" />} title="AI assistant built in" desc="Create, move and summarize tasks via chat" />
+          <Feature icon={<Zap className="h-4 w-4" />} title="Synced to the cloud" desc="Your boards, anywhere you sign in" />
+        </div>
+      </aside>
+
+      {/* Right: Auth form */}
+      <div className="flex-1 flex items-center justify-center px-4 py-10">
+        <div className="w-full max-w-md animate-fade-in">
+          <div className="flex items-center gap-3 justify-center mb-8 lg:hidden">
+            <img src={kanbanAiLogo} alt="Kanban + AI logo" className="h-14 w-auto" />
+          </div>
 
         <Card className="p-8 shadow-card border-border/60">
           <div className="mb-6">
@@ -173,6 +207,21 @@ export default function Auth() {
             </button>
           </p>
         </Card>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Feature({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
+  return (
+    <div className="flex items-start gap-3 p-3 rounded-xl bg-card/60 backdrop-blur border border-border/60 shadow-sm hover:shadow-card-hover transition-shadow">
+      <div className="h-8 w-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+        {icon}
+      </div>
+      <div className="min-w-0">
+        <p className="text-sm font-semibold leading-tight">{title}</p>
+        <p className="text-xs text-muted-foreground mt-0.5">{desc}</p>
       </div>
     </div>
   );
