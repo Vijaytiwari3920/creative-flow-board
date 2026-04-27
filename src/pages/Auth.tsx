@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
 import { Loader2, Sparkles, LayoutGrid, MessageSquare, Zap } from "lucide-react";
 import kanbanAiLogo from "@/assets/kanban-ai-logo.png";
+import authHero from "@/assets/auth-hero.png";
 
 export default function Auth() {
   const { user, loading } = useAuth();
@@ -96,14 +97,55 @@ export default function Auth() {
         </div>
 
         <div className="relative z-10 flex flex-col items-center text-center">
-          <div className="relative animate-slide-up-fade" style={{ animationDelay: "100ms" }}>
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-[hsl(var(--col-review))]/30 blur-2xl rounded-full" />
+          <div
+            className="relative w-72 h-72 lg:w-80 lg:h-80 flex items-center justify-center animate-slide-up-fade"
+            style={{ animationDelay: "100ms" }}
+          >
+            {/* Soft pulsing glow */}
+            <div className="absolute inset-6 bg-gradient-to-tr from-primary/30 via-[hsl(var(--col-review))]/25 to-[hsl(var(--col-progress))]/30 blur-3xl rounded-full animate-pulse-glow" />
+
+            {/* Slow rotating conic ring */}
+            <div
+              className="absolute inset-0 rounded-full opacity-40 animate-spin-slow"
+              style={{
+                background:
+                  "conic-gradient(from 0deg, transparent 0deg, hsl(var(--primary) / 0.35) 90deg, transparent 180deg, hsl(var(--col-review) / 0.35) 270deg, transparent 360deg)",
+                maskImage: "radial-gradient(circle, transparent 58%, black 60%, black 70%, transparent 72%)",
+                WebkitMaskImage:
+                  "radial-gradient(circle, transparent 58%, black 60%, black 70%, transparent 72%)",
+              }}
+            />
+
+            {/* Counter-rotating dashed ring */}
+            <div className="absolute inset-4 rounded-full border border-dashed border-primary/20 animate-spin-reverse" />
+
+            {/* Orbiting particles */}
+            <div className="absolute inset-0 animate-spin-slow">
+              <span className="absolute top-1 left-1/2 -translate-x-1/2 h-2 w-2 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary))]" />
+              <span className="absolute bottom-3 left-6 h-1.5 w-1.5 rounded-full bg-[hsl(var(--col-review))] shadow-[0_0_10px_hsl(var(--col-review))]" />
+              <span className="absolute right-4 top-10 h-1.5 w-1.5 rounded-full bg-[hsl(var(--col-progress))] shadow-[0_0_10px_hsl(var(--col-progress))]" />
+            </div>
+
+            {/* Hero image */}
             <img
-              src={kanbanAiLogo}
-              alt="Kanban + AI by JVS Company logo"
-              className="relative w-64 lg:w-72 h-auto drop-shadow-2xl animate-float"
+              src={authHero}
+              alt="AI-powered Kanban illustration"
+              width={1024}
+              height={1024}
+              className="relative z-10 w-60 lg:w-72 h-auto drop-shadow-2xl animate-float"
+            />
+
+            {/* Floating sparkle */}
+            <Sparkles
+              className="absolute top-6 right-6 h-5 w-5 text-primary/70 animate-float-slow"
+              style={{ animationDelay: "1s" }}
+            />
+            <Sparkles
+              className="absolute bottom-8 left-4 h-4 w-4 text-[hsl(var(--col-review))]/70 animate-float-slow"
+              style={{ animationDelay: "2.5s" }}
             />
           </div>
+
 
           <h2
             className="text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-tight max-w-md mt-6 animate-slide-up-fade"
