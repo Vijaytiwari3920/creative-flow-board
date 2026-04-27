@@ -73,23 +73,22 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen flex bg-surface">
-      {/* Left: Intro / branding */}
-      <aside className="hidden md:flex flex-col justify-between w-1/2 p-8 lg:p-12 bg-gradient-to-br from-primary-soft via-background to-accent relative overflow-hidden">
-        {/* Animated blobs */}
-        <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl animate-blob" />
-        <div className="absolute bottom-0 right-0 h-[28rem] w-[28rem] rounded-full bg-[hsl(var(--col-review))]/20 blur-3xl animate-blob" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/3 left-1/2 h-72 w-72 rounded-full bg-[hsl(var(--col-progress))]/15 blur-3xl animate-blob" style={{ animationDelay: "4s" }} />
+    <div className="min-h-screen flex relative overflow-hidden bg-gradient-to-br from-primary-soft via-background to-accent">
+      {/* Shared animated background blobs */}
+      <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl animate-blob pointer-events-none" />
+      <div className="absolute bottom-0 right-0 h-[28rem] w-[28rem] rounded-full bg-[hsl(var(--col-review))]/20 blur-3xl animate-blob pointer-events-none" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-1/3 left-1/2 h-72 w-72 rounded-full bg-[hsl(var(--col-progress))]/15 blur-3xl animate-blob pointer-events-none" style={{ animationDelay: "4s" }} />
+      <div
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
 
-        {/* Subtle grid overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.04] pointer-events-none"
-          style={{
-            backgroundImage:
-              "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
-            backgroundSize: "32px 32px",
-          }}
-        />
+      {/* Left: Intro / branding */}
+      <aside className="hidden md:flex flex-col justify-between w-1/2 p-8 lg:p-12 relative z-10">
 
         <div className="relative z-10 flex items-center gap-3 animate-slide-up-fade" style={{ animationDelay: "0ms" }}>
           <span className="text-xl font-bold tracking-tight">Tazkee</span>
@@ -139,13 +138,13 @@ export default function Auth() {
       </aside>
 
       {/* Right: Auth form */}
-      <div className="flex-1 flex items-center justify-center px-4 py-10">
+      <div className="flex-1 flex items-center justify-center px-4 py-10 relative z-10">
         <div className="w-full max-w-md animate-fade-in">
           <div className="flex items-center gap-3 justify-center mb-8 md:hidden">
             <img src={kanbanAiLogo} alt="Kanban + AI logo" className="h-14 w-auto" />
           </div>
 
-        <Card className="p-8 shadow-card border-border/60">
+        <Card className="p-8 shadow-elevated border-border/60 bg-card/80 backdrop-blur-xl">
           <div className="mb-6">
             <h1 className="text-2xl font-semibold tracking-tight">
               {mode === "signin" ? "Welcome back" : "Create your board"}
