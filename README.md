@@ -10,7 +10,7 @@ A modern web application built with React, Vite, TypeScript, Tailwind CSS, and s
 - **Styling:** Tailwind CSS
 - **Components:** Radix UI / shadcn/ui
 - **State/Data:** React Query (@tanstack/react-query)
-- **Drag & Drop:** dnd-kit
+- **Drag & Drop:** dnd-kit.
 
 ## Getting Started
 
