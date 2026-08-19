@@ -20,7 +20,7 @@ Make sure you have Node.js installed on your machine.
 
 ### Installation
 
-1. Clone the repository
+1. Clone the repository.
 2. Install dependencies:
    ```sh
    npm install
