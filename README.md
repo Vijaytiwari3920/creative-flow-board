@@ -1,4 +1,4 @@
-# Creative Flow Board
+# Creative Flow Board.
 
 A modern web application built with React, Vite, TypeScript, Tailwind CSS, and shadcn/ui components.
 
