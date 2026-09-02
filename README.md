@@ -1,4 +1,4 @@
-# Creative Flow Board.
+# Creative Flow Board
 
 A modern web application built with React, Vite, TypeScript, Tailwind CSS, and shadcn/ui components.
 
@@ -14,7 +14,7 @@ A modern web application built with React, Vite, TypeScript, Tailwind CSS, and s
 
 ## Getting Started
 
-### Prerequisites
+### Prerequisites.
 
 Make sure you have Node.js installed on your machine.
 
