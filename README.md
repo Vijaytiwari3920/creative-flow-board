@@ -4,7 +4,7 @@ A modern web application built with React, Vite, TypeScript, Tailwind CSS, and s
 
 ## Tech Stack
 
-- **Framework:** React 18
+- **Framework:** React 18.
 - **Build Tool:** Vite
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
